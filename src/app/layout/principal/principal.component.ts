@@ -175,7 +175,14 @@ export class PrincipalComponent {
   }
 
   searchDate(busquedaFecha: Date){
+    busquedaFecha.toLocaleDateString('en-GB').split('/').reverse().join('');
+      alert("vas a consultar la fecha esta fecha : " + busquedaFecha);
     if(busquedaFecha){
+      this.apiService.getByDate(busquedaFecha)
+      .subscribe(data =>{
+        this.showTableType = data
+      })
+      
       //alert("vas a consultar la fecha " + busquedaFecha);
       this.showTableType = true;
       //console.log(this.busquedaTipo);

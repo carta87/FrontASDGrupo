@@ -27,6 +27,11 @@ export class ApiService {
     return this.http.get<any>(environment.Url_apiBD+ "Activo/Serial/" + serie);
   }
 
+  getByDate (FechaCompra :Date){
+    //console.log("en servicio por tipo "+ serie);
+    return this.http.get<any>(environment.Url_apiBD+ "Activo/FechaCompra/" + FechaCompra);
+  }
+
 
 
 
