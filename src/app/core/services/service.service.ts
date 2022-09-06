@@ -27,28 +27,17 @@ export class ApiService {
     return this.http.get<any>(environment.Url_apiBD+ "Activo/Serial/" + serie);
   }
 
-  getByDate (FechaCompra :Date){
-    //console.log("en servicio por tipo "+ serie);
-    return this.http.get<any>(environment.Url_apiBD+ "Activo/FechaCompra/" + FechaCompra);
+  getByDate (fechaconvert : String){
+    console.log(" esta es la fec==" + fechaconvert);
+    return this.http.get<any>(environment.Url_apiBD+ "Activo/FechaCompra/" + fechaconvert);
   }
 
-
-
-
-  getAllPerson (){
-    return this.http.get<any>(environment.Url_apiBD+ "Persona/todos");
-  }
-
- 
+  
 
   getAllArchives (){
     return this.http.get<any>(environment.Url_apiBD+ "Tipo/todos");
   }
 
-
-  getAllPosition (){
-    return this.http.get<any>(environment.Url_apiBD+ "Cargo/todos");
-  }
 
   getAllCity (){
     return this.http.get<any>(environment.Url_apiBD+ "Ciudad/todos");
@@ -80,7 +69,18 @@ export class ApiService {
     //console.log(idActive);
     return this.http.delete<boolean>(environment.Url_apiBD+ "Activo/delete/" + idActive);
   }
+
+
+  
 /*
+  getAllPerson (){
+    return this.http.get<any>(environment.Url_apiBD+ "Persona/todos");
+  }
+
+  
+  getAllPosition (){
+    return this.http.get<any>(environment.Url_apiBD+ "Cargo/todos");
+  }
   createUser(Archivo: archivo){
     return this.http.post(environment.Url_apiBD+ "save", Archivo);
   }

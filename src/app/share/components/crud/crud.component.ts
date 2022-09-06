@@ -68,8 +68,7 @@ export class CrudComponent implements OnInit {
 
   Enviar(){
     this.habilitarCreate=false;
-    //console.log("esto es el objeto que envio");
-    //console.log(this.enviarActivo);
+    //console.log("esto es el objeto que envio"+ this.enviarActivo);
     this.apiService.createActive(this.enviarActivo).subscribe();
     this.toastrService.success("Registro Guardado con exito");
     this.toastrService.success("Por favor actualizar la tabla");

@@ -15,11 +15,13 @@ export class PrincipalComponent {
   busqueda: number = 0;
   busquedaTipo: number = 0;
   busquedaFecha: Date;
+  fechaconvert : string;
   busquedaSerial: string;
   nameCity : String = "";
   namePosition: String = "";
   nameType: String = "";
   tipoActivo: String = "";
+  fechaEnviar : String = "";
 
 
   showTableType: boolean = false;
@@ -65,6 +67,7 @@ export class PrincipalComponent {
 
   active : Active[]=[];
   activeTipe : Active[]=[];
+  activeDate : Active[]=[];
 
 
   constructor(
@@ -90,16 +93,7 @@ export class PrincipalComponent {
     .subscribe( data=>{
       this.active = data
     })
-
-    this.apiService.getAllPerson()
-    .subscribe( data=>{
-      this.person = data
-    })
-
-    this.apiService.getAllPosition()
-    .subscribe( data=>{
-      this.namePosition = data
-    })
+    
 
     this.apiService.getAllCity()
     .subscribe( data=>{
@@ -125,6 +119,17 @@ export class PrincipalComponent {
     .subscribe( data=>{
       this.purchuse = data
     })
+
+    /*
+    this.apiService.getAllPerson()
+    .subscribe( data=>{
+      this.person = data
+    })
+
+    this.apiService.getAllPosition()
+    .subscribe( data=>{
+      this.namePosition = data
+    })*/
 /*
     console.log(this.person);
     console.log(this.namePosition);
@@ -175,17 +180,16 @@ export class PrincipalComponent {
   }
 
   searchDate(busquedaFecha: Date){
-    busquedaFecha.toLocaleDateString('en-GB').split('/').reverse().join('');
-      alert("vas a consultar la fecha esta fecha : " + busquedaFecha);
+    this.fechaEnviar = busquedaFecha.getFullYear()+"-"+ (busquedaFecha.getMonth()+1) + "-"+ busquedaFecha.getDate();
+      //alert("vas a consultar la fecha = "+ this.fechaEnviar);
     if(busquedaFecha){
-      this.apiService.getByDate(busquedaFecha)
+              
+       //alert("vas a consultar la fecha quemada = "+ this.fechaEnviar);
+      this.apiService.getByDate(this.fechaEnviar)
       .subscribe(data =>{
-        this.showTableType = data
+        this.activeDate = data;
       })
-      
-      //alert("vas a consultar la fecha " + busquedaFecha);
       this.showTableType = true;
-      //console.log(this.busquedaTipo);
     }else{
       alert("por favor ingrese un tipo valido");
       this.showTableType = false;

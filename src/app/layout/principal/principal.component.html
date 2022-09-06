@@ -19,10 +19,6 @@
           -->
             <th class="text-center align-middle"><strong>id</strong></th>
             <th class="text-center align-middle"><strong>Tipo</strong></th>
-            <!--<th class="text-center align-middle"><strong>Ciudad</strong></th>-->
-            <!--<th class="text-center align-middle"><strong>Nombre</strong></th>-->
-            <!--<th class="text-center align-middle"><strong>Identificación</strong></th>-->
-            <!--<th class="text-center align-middle"><strong>Area</strong></th>-->
             <th class="text-center align-middle"><strong>Nombre</strong></th>
             <th class="text-center align-middle"><strong>Descripcion</strong></th>
             <th class="text-center align-middle"><strong>Dimensiones</strong></th>
@@ -39,10 +35,6 @@
           <tr *ngFor="let r of active; let k = index;">
             <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.id}}</td>
             <td style="font-size: 18px!important; width: 10%" class="text-center align-middle">{{r.type}}</td>
-            <!-- <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.city}}</td> -->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.nameEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.idEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.positionResponsible}}</td>-->
             <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.name}}</td>
             <td style="font-size: 18px!important; width: 20%"class="text-center align-middle">{{r.description}}</td>
             <td style="font-size: 18px!important; width: 25%"class="text-center align-middle">Alto = {{r.tall}}, Largo = {{r.length}}, Ancho = {{r.width}}, Peso = {{r.weight}}</td>
@@ -88,10 +80,6 @@
               <tr>
                 <th class="text-center align-middle"><strong>id</strong></th>
                 <th class="text-center align-middle"><strong>Tipo</strong></th>
-                <!--<th class="text-center align-middle"><strong>Ciudad</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Nombre</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Identificación</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Area</strong></th>-->
                 <th class="text-center align-middle"><strong>Nombre</strong></th>
                 <th class="text-center align-middle"><strong>Descripcion</strong></th>
                 <th class="text-center align-middle"><strong>Dimensiones</strong></th>
@@ -108,10 +96,6 @@
               <tr *ngFor="let r of activeTipe; let k = index;">
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.id}}</td>
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.type}}</td>
-                <!-- <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.city}}</td> -->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.nameEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.idEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.positionResponsible}}</td>-->
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.name}}</td>
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.description}}</td>
                 <td style="font-size: 18px!important; width: 25%"class="text-center align-middle">Alto = {{r.tall}}, Largo = {{r.length}}, Ancho = {{r.width}}, Peso = {{r.weight}}</td>
@@ -153,10 +137,6 @@
               <tr>
                 <th class="text-center align-middle"><strong>id</strong></th>
                 <th class="text-center align-middle"><strong>Tipo</strong></th>
-                <!--<th class="text-center align-middle"><strong>Ciudad</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Nombre</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Identificación</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Area</strong></th>-->
                 <th class="text-center align-middle"><strong>Nombre</strong></th>
                 <th class="text-center align-middle"><strong>Descripcion</strong></th>
                 <th class="text-center align-middle"><strong>Dimensiones</strong></th>
@@ -167,16 +147,12 @@
             </thead>
 
             <tbody>
-              <tr *ngIf="active.length == 0">
+              <tr *ngIf="activeDate.length == 0">
                 <td colspan="15">No hay registros cargados</td>
               </tr>
-              <tr *ngFor="let r of active; let k = index;">
+              <tr *ngFor="let r of activeDate; let k = index;">
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.id}}</td>
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.type}}</td>
-                <!-- <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.city}}</td> -->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.nameEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.idEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.positionResponsible}}</td>-->
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.name}}</td>
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.description}}</td>
                 <td style="font-size: 18px!important; width: 25%"class="text-center align-middle">Alto = {{r.tall}}, Largo = {{r.length}}, Ancho = {{r.width}}, Peso = {{r.weight}}</td>
@@ -208,10 +184,6 @@
               <tr>
                 <th class="text-center align-middle"><strong>id</strong></th>
                 <th class="text-center align-middle"><strong>Tipo</strong></th>
-                <!--<th class="text-center align-middle"><strong>Ciudad</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Nombre</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Identificación</strong></th>-->
-                <!--<th class="text-center align-middle"><strong>Area</strong></th>-->
                 <th class="text-center align-middle"><strong>Nombre</strong></th>
                 <th class="text-center align-middle"><strong>Descripcion</strong></th>
                 <th class="text-center align-middle"><strong>Dimensiones</strong></th>
@@ -228,10 +200,6 @@
               <tr *ngFor="let r of activeTipe; let k = index;">
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.id}}</td>
                 <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.type}}</td>
-                <!-- <td style="font-size: 18px!important; width: 5%" class="text-center align-middle">{{r.city}}</td> -->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.nameEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.idEmployee}}</td>-->
-                <!--<td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.positionResponsible}}</td>-->
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.name}}</td>
                 <td style="font-size: 18px!important; width: 10%"class="text-center align-middle">{{r.description}}</td>
                 <td style="font-size: 18px!important; width: 25%"class="text-center align-middle">Alto = {{r.tall}}, Largo = {{r.length}}, Ancho = {{r.width}}, Peso = {{r.weight}}</td>
