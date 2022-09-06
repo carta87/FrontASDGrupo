@@ -15,17 +15,24 @@ export class CrudComponent implements OnInit {
   habilitarUpdate2 : boolean = false;
   habilitarDelete : boolean = false;
   confirmacioDelete : boolean = false;
+  consultarCuidades : string = "";
+  consultarArea : string = "";
   id : String = "";
+  idDelete : string = ""+this.id;
   enviarActivo : Active = {
     id:null,
     type : null,
     city : null,
     nameEmployee : null,
     idEmployee : null,
+    idPosition : null,
     positionResponsible : null,
     name : null,
     description : null,
     tall  : null,
+    length  : null,
+    weight :null,
+    width : null,
     serial  : null,
     numberInsideInventory  : null,
     valueActive  : null,
@@ -83,13 +90,13 @@ export class CrudComponent implements OnInit {
   }
 
   EliminarArchive(){
-    this.apiService.DeleteActive(this.id).subscribe(data => {
+    this.apiService.DeleteActive(this.idDelete).subscribe(data => {
       this.confirmacioDelete = data;
       if(this.confirmacioDelete){
         this.toastrService.success("Borrado Exitoso");
         this.toastrService.success("Por favor actualizar la tabla");
       }else {
-        this.toastrService.error("El numero ingresado no pertenece a la tabla");
+        //this.toastrService.error("El numero ingresado no pertenece a la tabla");
       }
     })
   }

@@ -41,10 +41,14 @@ export interface Active{
   city : string;
   nameEmployee : string;
   idEmployee : number;
+  idPosition : number;
   positionResponsible : string;
   name : string;
   description : string;
   tall  : string;
+  length  : string;
+  weight :string;
+  width : string;
   serial  : string;
   numberInsideInventory  : string;
   valueActive  : number;

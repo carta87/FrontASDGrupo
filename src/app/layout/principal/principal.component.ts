@@ -142,7 +142,7 @@ export class PrincipalComponent {
       .subscribe( data=>{
         this.activeTipe = data
       })
-      alert("vas a consultar Maquinaria");
+      //alert("vas a consultar Maquinaria");
       this.showTableType = true;
       //console.log(this.busquedaTipo);
     }
